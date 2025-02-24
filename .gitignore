@@ -7,10 +7,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-/cob-95/node_modules
-/cob-95/dist
-/cob-95/dist-ssr
-/cob-95/*.local
+/client/node_modules
+/client/dist
+/client/dist-ssr
+/client/*.local
 
 /server/node_modules
 /server/dist
