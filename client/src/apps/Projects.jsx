@@ -9,7 +9,7 @@ const currentProjects = [
     description:
       "An improved version of Canvas LMS that addresses many pain points by integrating automatic scheduling and smart AI features.",
     link: "https://github.com/jacobmartinage/secondstudent",
-    image: "/canvas.png",
+    image: "../assets/canvas.png",
     technologies: ["React", "TypeScript", "Tailwind", "Azure", "Supabase", "AI", "Canvas API"],
   },
   {
@@ -18,7 +18,7 @@ const currentProjects = [
     description:
       "Converting a school bus into a camper/RV with a modern interior, 2000W woth of solar panels and 10,000Wh battery storage, and a self-written and designed smart home system built with Arduinos and ESP32s.",
     link: "",
-    image: "/bus.jpg",
+    image: "../assets/bus.jpg",
     technologies: ["School Bus", "Automotive", "Woodworking", "IoT"],
   },
 ];
@@ -30,7 +30,7 @@ const pastProjects = [
     description:
       "A Windows 95-themed interactive portfolio showcasing projects, experience, and skills with draggable windows and retro styling.",
     link: "https://github.com/jacobmartinage/roomfolio",
-    image: "/roomfolio.png",
+    image: "../assets/roomfolio.png",
     technologies: ["React", "CSS", "Dnd-Kit"],
   },
   {
@@ -39,7 +39,7 @@ const pastProjects = [
     description:
       "React Native app that won Best Startup Hack at Hackviolet 2025, providing AI-powered safety reports, dynamic routing, and real-time heatmaps.",
     link: "https://github.com/jacobmartinage/steerclear",
-    image: "/SteerClear.png",
+    image: "../assets/SteerClear.png",
     technologies: ["React Native", "Supabase", "Nativewind", "JavaScript", "Mapbox"],
   },
   {
@@ -48,7 +48,7 @@ const pastProjects = [
     description:
       "AI-powered cooking assistant that analyzes fridge contents to suggest recipes, with a Unity-based interface and voice commands.",
     link: "https://github.com/JacobMartinage/SeeFood",
-    image: "/seefood.png",
+    image: "../assets/seefood.png",
     technologies: ["AR/VR", "Unity", "C#", "Python", "OpenCV", "TensorFlow"],
   },
   {
@@ -57,7 +57,7 @@ const pastProjects = [
     description:
       "Automated tool that cancels subscription services through AI-driven phone calls, saving users over 500 hours of hold time.",
     link: "https://github.com/ramankc6/ditch",
-    image: "/Ditch.png",
+    image: "../assets/Ditch.png",
     technologies: ["Node.js", "Twilio", "AWS", "ElevenLabs", "Deepgram"],
   },
   {
@@ -66,7 +66,7 @@ const pastProjects = [
     description:
       "AI chatbot predicting car emissions with over 95% accuracy, earning 3rd place in Environmental ML category at VTHacksX.",
     link: "https://github.com/ramankc6/VTHacks2022",
-    image: "/envoLogo2.png",
+    image: "../assets/envoLogo2.png",
     technologies: ["Python", "AI/ML", "Twilio", "JavaScript"],
   },
   {
@@ -75,7 +75,7 @@ const pastProjects = [
     description:
       "Converted a retro TV into a modern PC with a working original power button and integrated front monitor, serving as my main computer.",
     link: "",
-    image: "/retro-tv.jpg",
+    image: "../assets/retro-tv.jpg",
     technologies: ["Electronics", "PC Building", "Woodworking"],
   },
 ];

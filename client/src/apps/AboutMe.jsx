@@ -7,7 +7,7 @@ export default function AboutMe() {
       <div className="about-me-header">
         <div className="about-me-image">
           <img
-            src="aboutme.png"
+            src="../assets/aboutme.png" 
             alt="Jacob Martinage"
             style={{ width: "100%", height: "100%" }}
           />

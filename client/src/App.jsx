@@ -11,10 +11,10 @@ import Chat from "./apps/Chat";
 import "./cob.css";
 
 const shortcuts = [
-  { appName: "about-me", label: "About Me", icon: "/icons/about.png" },
-  { appName: "experience", label: "Experience", icon: "/icons/experiences.png" },
-  { appName: "projects", label: "Projects", icon: "/icons/projects.png" },
-  { appName: "chat", label: "Chat", icon: "/icons/chat.png" },
+  { appName: "about-me", label: "About Me", icon: "./src/assets/icons/about.png" },
+  { appName: "experience", label: "Experience", icon: "./src/assets/icons/experiences.png" },
+  { appName: "projects", label: "Projects", icon: "./src/assets/icons/projects.png" },
+  { appName: "chat", label: "Chat", icon: "./src/assets/icons/chat.png" },
 ];
 
 export default function App() {
@@ -90,7 +90,7 @@ export default function App() {
       <Desktop>
         {/* 🌽 Corn Icon */}
         <img
-          src="/corn.png"
+          src="./src/assets/corn.png"
           alt="Corn Icon"
           className="corn-icon"
         />
