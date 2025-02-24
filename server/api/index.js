@@ -6,9 +6,22 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// CORS configuration
+const corsOptions = {
+  origin: ['http://localhost:5174', 'https://cob-95.vercel.app'], // Client URLs
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions)); // Apply CORS globally
 app.use(express.json());
 
+// Preflight handling for all routes
+app.options('*', cors(corsOptions));
+
+// OpenAI setup
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -20,7 +33,7 @@ app.post("/api/chat", async (req, res) => {
     const systemPrompt = {
       role: "system",
       content: `
-        You are JacobBot, representing Jacob Martinage, a driven software engineer and full-stack developer passionate about building impactful solutions. 
+        You are Jacob Martinage, a driven software engineer and full-stack developer passionate about building impactful solutions. 
         Jacob is currently pursuing a B.S. in Computer Science at Virginia Tech with a 3.7 GPA, expecting to graduate in May 2026. 
         He specializes in JavaScript and React, his favorite technologies, and has experience with Python, Kubernetes, Docker, AWS, and more. 
         Jacob has interned at General Atomics-CCRi, co-founded Project Torch (a registered non-profit providing free web solutions to local businesses), 
@@ -39,16 +52,15 @@ app.post("/api/chat", async (req, res) => {
       messages: [systemPrompt, ...messages],
     });
 
-    const reply = response.choices[0].message.content;
-    res.json({ reply });
+    res.json({ reply: response.choices[0].message.content });
   } catch (error) {
-    console.error("Error with GPT request:", error.response?.data || error.message);
-    res.status(500).json({ error: "Something went wrong with GPT request." });
+    console.error("Error:", error.response?.data || error.message);
+    res.status(500).json({ error: "Something went wrong." });
   }
 });
 
-
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+

@@ -3,6 +3,7 @@ import { DndContext } from "@dnd-kit/core";
 import Desktop from "./components/Desktop";
 import Taskbar from "./components/Taskbar";
 import Window from "./components/Window";
+import StartMenu from "./components/StartMenu";
 import AboutMe from "./apps/AboutMe";
 import Experience from "./apps/Experience";
 import Projects from "./apps/Projects";
@@ -19,6 +20,7 @@ const shortcuts = [
 export default function App() {
   const [windows, setWindows] = useState([]);
   const [topZIndex, setTopZIndex] = useState(100);
+  const [startMenuOpen, setStartMenuOpen] = useState(false);
 
   const windowSizes = {
     "about-me": { width: "700px", height: "550px" },
@@ -29,20 +31,20 @@ export default function App() {
 
   function openWindow(appName) {
     setWindows((prev) => {
-      // check if the app is already open
-      if (prev.some((w) => w.appName === appName)) {
+      const existingWindow = prev.find((w) => w.appName === appName);
+      if (existingWindow) {
+        focusWindow(existingWindow.id); // Focus if already open
         return prev;
       }
-  
+
       return [
         ...prev,
         { id: Date.now(), appName, zIndex: topZIndex, ...windowSizes[appName] },
       ];
     });
-  
+
     setTopZIndex((z) => z + 1);
   }
-  
 
   function closeWindow(id) {
     setWindows((prev) => prev.filter((w) => w.id !== id));
@@ -69,31 +71,31 @@ export default function App() {
         return (
           <div>
             <h2>Welcome to Cob-95!</h2>
-            <p>Navigate the desktop by clicking the buttons on the taskbar.</p>
+            <p>Navigate using desktop shortcuts or the taskbar.</p>
             <ul>
               <li><b>About Me:</b> Learn more about me.</li>
-              <li><b>Experience:</b> View my professional history.</li>
-              <li><b>Projects:</b> Explore my past and current projects.</li>
-              <li><b>Chat:</b> Ask JacobBot questions about me.</li>
+              <li><b>Experience:</b> View my work history.</li>
+              <li><b>Projects:</b> See some of the personal projects I've built.</li>
+              <li><b>Chat:</b> Ask JacobBot anything or use some of the pre-written prompts! JacobBot is connected to a GPT instance trained on information about me!</li>
             </ul>
-            <p>Click the corn icon for a surprise 🌽!</p>
           </div>
         );
-      default: return <div>Unknown App: {appName}</div>;
+      default:
+        return <div>Unknown App: {appName}</div>;
     }
   }
 
   return (
     <DndContext>
       <Desktop>
-        {/* corn  */}
+        {/* 🌽 Corn Icon */}
         <img
           src="/corn.png"
           alt="Corn Icon"
           className="corn-icon"
         />
 
-        {/* shortcuts */}
+        {/* 🖥️ Desktop Shortcuts */}
         <div className="desktop-shortcuts">
           {shortcuts.map((shortcut, i) => (
             <div
@@ -108,7 +110,7 @@ export default function App() {
           ))}
         </div>
 
-        {/* windows */}
+        {/* 🪟 Windows */}
         {windows.map((win) => (
           <Window
             key={win.id}
@@ -123,14 +125,15 @@ export default function App() {
           </Window>
         ))}
 
-        {/* taskbar */}
+        {/* 🖱️ Taskbar & Start Menu */}
         <Taskbar
-          onStartClick={() => alert("Cob-95 Start Menu goes here!")}
+          onStartClick={() => setStartMenuOpen((prev) => !prev)}
           onAboutMeClick={() => openWindow("about-me")}
           onExperienceClick={() => openWindow("experience")}
           onProjectsClick={() => openWindow("projects")}
           onChatClick={() => openWindow("chat")}
         />
+        <StartMenu isOpen={startMenuOpen} />
       </Desktop>
     </DndContext>
   );

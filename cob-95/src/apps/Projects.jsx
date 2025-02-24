@@ -18,7 +18,7 @@ const currentProjects = [
     description:
       "Converting a school bus into a camper/RV with a modern interior, 2000W woth of solar panels and 10,000Wh battery storage, and a self-written and designed smart home system built with Arduinos and ESP32s.",
     link: "",
-    image: "/images/school-bus-conversion.png",
+    image: "/bus.jpg",
     technologies: ["School Bus", "Automotive", "Woodworking", "IoT"],
   },
 ];
@@ -75,7 +75,7 @@ const pastProjects = [
     description:
       "Converted a retro TV into a modern PC with a working original power button and integrated front monitor, serving as my main computer.",
     link: "",
-    image: "/images/retro-tv-conversion.png",
+    image: "/retro-tv.jpg",
     technologies: ["Electronics", "PC Building", "Woodworking"],
   },
 ];

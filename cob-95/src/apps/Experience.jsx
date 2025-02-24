@@ -25,10 +25,10 @@ export default function Experience() {
     },
     {
       title: "Backend Software Engineer",
-      company: "General Atomics • Charlottesville, VA, USA",
+      company: "General Atomics CCRi• Charlottesville, VA, USA",
       duration: "Jun 2024 - Aug 2024",
       details: [
-        "Developed Bash scripts to automate funding source tracking and data rights management, reducing manual processing time by 95%.",
+        "Developed Bash scripts to automate funding source tracking and data rights management, reducing manual processing time by 80%.",
         "Optimized Kubernetes deployments in Minikube, improving overall performance and reliability.",
         "Enhanced stability of a major Java/Scala stack by addressing memory inefficiencies, increasing uptime from 2 hours to over 20 hours."
       ],
@@ -45,7 +45,7 @@ export default function Experience() {
             <div className="timeline-content">
               <h3>{exp.title}</h3>
               <span className="company">{exp.company}</span>
-              <span className="duration">{exp.duration}</span>
+              <span className="duration"> |  {exp.duration}</span>
               <ul>
                 {exp.details.map((detail, i) => (
                   <li key={i}>{detail}</li>
