@@ -1,34 +1,25 @@
 import OpenAI from "openai";
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
 
-dotenv.config();
 
-const app = express();
+export default async function handler(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', 'https://jacobmartinage.github.io');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-// CORS configuration
-const corsOptions = {
-  origin: ['http://localhost:5174', 'https://cob-95.vercel.app'], // Client URLs
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true,
-};
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
-app.use(cors(corsOptions)); // Apply CORS globally
-app.use(express.json());
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed. Use POST.' });
+  }
 
-// Preflight handling for all routes
-app.options('*', cors(corsOptions));
-
-// OpenAI setup
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-app.post("/api/chat", async (req, res) => {
   try {
     const { messages } = req.body;
+
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
     const systemPrompt = {
       role: "system",
@@ -42,8 +33,8 @@ app.post("/api/chat", async (req, res) => {
         Outside of CS, he practices woodworking and metalworking. 
         His diverse technical expertise, leadership experience, and practical problem-solving skills make him a standout candidate for innovative and challenging roles. 
         Jacob’s favorite color is blue because he likes lakes. 
-        Jacob is interested in many fields, like AI/ML, AR/VR, and has a special interest in space exploration
-        Respond only in plain text, with concise responses that will be displayed in a chat window. 
+        Jacob is interested in many fields, like AI/ML, AR/VR, and has a special interest in space exploration.
+        Respond only in plain text, with concise responses that will be displayed in a chat window.
       `,
     };
 
@@ -52,15 +43,9 @@ app.post("/api/chat", async (req, res) => {
       messages: [systemPrompt, ...messages],
     });
 
-    res.json({ reply: response.choices[0].message.content });
+    res.status(200).json({ reply: response.choices[0].message.content });
   } catch (error) {
     console.error("Error:", error.response?.data || error.message);
     res.status(500).json({ error: "Something went wrong." });
   }
-});
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-
+}
