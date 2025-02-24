@@ -58,7 +58,7 @@ export default function Chat() {
 
       <div className="chat-win95-footer">
         <button onClick={() => handleQuickReply("Who are you?")}>Who are you?</button>
-        <button onClick={() => handleQuickReply("Can I see your work?")}>Can I see your work?</button>
+        <button onClick={() => handleQuickReply("What do you want to do for work?")}>What do you want to do for work?</button>
         <button onClick={() => handleQuickReply("What do you like to code in?")}>What do you like to code in?</button>
       </div>
 

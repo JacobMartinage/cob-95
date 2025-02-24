@@ -9,7 +9,7 @@
   --cob95-accent: #000080;
 }
 
-/* 📁 Desktop */
+/* desktop */
 .desktop {
   width: 100vw;
   height: 100vh;
@@ -21,7 +21,60 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* 🖱️ Taskbar */
+/* desktop Shortcuts */
+.desktop-shortcuts {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.desktop-shortcut {
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.desktop-shortcut img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 4px;
+  transition: transform 0.2s ease;
+}
+
+.desktop-shortcut span {
+  font-size: 12px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.desktop-shortcut:hover img {
+  transform: scale(1.1);
+}
+
+.desktop-shortcut:active img {
+  transform: scale(0.95);
+}
+
+
+/* corn icon */
+.corn-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+/* taskbar */
 .taskbar {
   position: absolute;
   bottom: 0;
@@ -60,7 +113,7 @@
   box-shadow: inset 1px 1px 0 #fff;
 }
 
-/* 🪟 Window Styling */
+/* window */
 .window95 {
   width: 600px;
   max-width: 90vw;
@@ -125,7 +178,7 @@
   box-shadow: inset 1px 1px 0 #fff;
 }
 
-/* 🗨️ Chat Window */
+/* chat Window */
 .chat-win95-window {
   width: 460px;
   background-color: #c0c0c0;
@@ -167,7 +220,7 @@
 
 }
 
-/* 📝 Chat Footer */
+/* chat footer */
 .chat-win95-footer {
   background: #c0c0c0;
   padding: 8px;
@@ -195,7 +248,7 @@
   box-shadow: inset 1px 1px 0 #fff;
 }
 
-/* 📝 Chat Input */
+/* chat input */
 .chat-win95-input {
   display: flex;
   padding: 6px;
@@ -234,7 +287,7 @@
 }
 
 
-/* About me */
+/* about me */
 .about-me-container {
   display: flex;
   flex-direction: column;
@@ -280,7 +333,7 @@
   font-weight: bolder;
 }
 
-/* Experience Timeline */
+/* experience timeline */
 .timeline-container {
   width: 100%;
   max-width: 800px;
@@ -361,7 +414,7 @@
 }
 
 
-/* 🗂️ Projects Section */
+/* projects */
 .projects-container {
   width: 100%;
   padding: 16px;
