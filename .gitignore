@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+/cob-95/node_modules
+/cob-95/dist
+/cob-95/dist-ssr
+/cob-95/*.local
+
+/server/node_modules
+/server/dist
+/server/dist-ssr
+/server/*.local
+/server/.env
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
