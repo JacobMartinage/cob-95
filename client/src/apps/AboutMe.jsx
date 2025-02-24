@@ -1,13 +1,13 @@
 import React from "react";
 import "../cob.css";
-
+import aboutme from "../assets/aboutme.png";
 export default function AboutMe() {
   return (
     <div className="about-me-container">
       <div className="about-me-header">
         <div className="about-me-image">
           <img
-            src="../assets/aboutme.png" 
+            src={aboutme}
             alt="Jacob Martinage"
             style={{ width: "100%", height: "100%" }}
           />

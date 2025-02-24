@@ -8,13 +8,18 @@ import AboutMe from "./apps/AboutMe";
 import Experience from "./apps/Experience";
 import Projects from "./apps/Projects";
 import Chat from "./apps/Chat";
+import corn from "./assets/corn.png";
+import about from "./assets/icons/about.png";
+import experiences from "./assets/icons/experiences.png";
+import projects from "./assets/icons/projects.png";
+import chat from "./assets/icons/chat.png";
 import "./cob.css";
 
 const shortcuts = [
-  { appName: "about-me", label: "About Me", icon: "./src/assets/icons/about.png" },
-  { appName: "experience", label: "Experience", icon: "./src/assets/icons/experiences.png" },
-  { appName: "projects", label: "Projects", icon: "./src/assets/icons/projects.png" },
-  { appName: "chat", label: "Chat", icon: "./src/assets/icons/chat.png" },
+  { appName: "about-me", label: "About Me", icon: about },
+  { appName: "experience", label: "Experience", icon: experiences },
+  { appName: "projects", label: "Projects", icon: projects },
+  { appName: "chat", label: "Chat", icon: chat },
 ];
 
 export default function App() {
@@ -90,7 +95,7 @@ export default function App() {
       <Desktop>
         {/* 🌽 Corn Icon */}
         <img
-          src="./src/assets/corn.png"
+          src={corn}
           alt="Corn Icon"
           className="corn-icon"
         />

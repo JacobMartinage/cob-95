@@ -1,5 +1,14 @@
 import React from "react";
 import "../cob.css";
+import canvas from "../assets/canvas.png";
+import bus from "../assets/bus.jpg";
+import roomfolio from "../assets/roomfolio.png";
+import steerclear from "../assets/SteerClear.png";
+import seefood from "../assets/seefood.png";
+import ditch from "../assets/Ditch.png";
+import envo from "../assets/envoLogo2.png";
+import retro from "../assets/retro-tv.jpg";
+
 
 // Project data
 const currentProjects = [
@@ -9,7 +18,7 @@ const currentProjects = [
     description:
       "An improved version of Canvas LMS that addresses many pain points by integrating automatic scheduling and smart AI features.",
     link: "https://github.com/jacobmartinage/secondstudent",
-    image: "../assets/canvas.png",
+    image: canvas,
     technologies: ["React", "TypeScript", "Tailwind", "Azure", "Supabase", "AI", "Canvas API"],
   },
   {
@@ -18,7 +27,7 @@ const currentProjects = [
     description:
       "Converting a school bus into a camper/RV with a modern interior, 2000W woth of solar panels and 10,000Wh battery storage, and a self-written and designed smart home system built with Arduinos and ESP32s.",
     link: "",
-    image: "../assets/bus.jpg",
+    image: bus,
     technologies: ["School Bus", "Automotive", "Woodworking", "IoT"],
   },
 ];
@@ -30,7 +39,7 @@ const pastProjects = [
     description:
       "A Windows 95-themed interactive portfolio showcasing projects, experience, and skills with draggable windows and retro styling.",
     link: "https://github.com/jacobmartinage/roomfolio",
-    image: "../assets/roomfolio.png",
+    image: roomfolio,
     technologies: ["React", "CSS", "Dnd-Kit"],
   },
   {
@@ -39,7 +48,7 @@ const pastProjects = [
     description:
       "React Native app that won Best Startup Hack at Hackviolet 2025, providing AI-powered safety reports, dynamic routing, and real-time heatmaps.",
     link: "https://github.com/jacobmartinage/steerclear",
-    image: "../assets/SteerClear.png",
+    image: steerclear,
     technologies: ["React Native", "Supabase", "Nativewind", "JavaScript", "Mapbox"],
   },
   {
@@ -48,7 +57,7 @@ const pastProjects = [
     description:
       "AI-powered cooking assistant that analyzes fridge contents to suggest recipes, with a Unity-based interface and voice commands.",
     link: "https://github.com/JacobMartinage/SeeFood",
-    image: "../assets/seefood.png",
+    image: seefood,
     technologies: ["AR/VR", "Unity", "C#", "Python", "OpenCV", "TensorFlow"],
   },
   {
@@ -57,7 +66,7 @@ const pastProjects = [
     description:
       "Automated tool that cancels subscription services through AI-driven phone calls, saving users over 500 hours of hold time.",
     link: "https://github.com/ramankc6/ditch",
-    image: "../assets/Ditch.png",
+    image: ditch,
     technologies: ["Node.js", "Twilio", "AWS", "ElevenLabs", "Deepgram"],
   },
   {
@@ -66,7 +75,7 @@ const pastProjects = [
     description:
       "AI chatbot predicting car emissions with over 95% accuracy, earning 3rd place in Environmental ML category at VTHacksX.",
     link: "https://github.com/ramankc6/VTHacks2022",
-    image: "../assets/envoLogo2.png",
+    image: envo,
     technologies: ["Python", "AI/ML", "Twilio", "JavaScript"],
   },
   {
@@ -75,7 +84,7 @@ const pastProjects = [
     description:
       "Converted a retro TV into a modern PC with a working original power button and integrated front monitor, serving as my main computer.",
     link: "",
-    image: "../assets/retro-tv.jpg",
+    image: retro,
     technologies: ["Electronics", "PC Building", "Woodworking"],
   },
 ];
