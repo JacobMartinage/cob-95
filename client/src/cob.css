@@ -1,12 +1,13 @@
 /* 🌈 Color Palette */
 :root {
-  --cob95-main: #d6b10b;
-  --cob95-green: #8bb616;
+  --cob95-main: #0094b9;
+  --cob95-green: #172ca5;
   --cob95-white: #dfdfdf;
   --cob95-dark: #2b2b2b;
   --win95-highlight: #949391;
-  --cob95-shadow: #2b8d0d;
+  --cob95-shadow: #92dbf8;
   --cob95-accent: #000080;
+  --cob95-red: #fa0606;
 }
 
 /* desktop */
@@ -166,7 +167,7 @@
   height: 18px;
   text-align: center;
   line-height: 16px;
-  background: var(--cob95-main);
+  background: var(--cob95-red);
   border: 1px solid var(--cob95-shadow);
   font-weight: bold;
   cursor: pointer;

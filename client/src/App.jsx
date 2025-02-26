@@ -93,12 +93,7 @@ export default function App() {
   return (
     <DndContext>
       <Desktop>
-        {/* 🌽 Corn Icon */}
-        <img
-          src={corn}
-          alt="Corn Icon"
-          className="corn-icon"
-        />
+
 
         {/* 🖥️ Desktop Shortcuts */}
         <div className="desktop-shortcuts">
